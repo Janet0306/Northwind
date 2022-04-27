@@ -1,0 +1,65 @@
+﻿@model IEnumerable<UWofS.CS7.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!--Displays a view with a limited number of fields from the employees database.  -->
+<h2>Employees</h2>
+
+<p>
+    <a asp-action="Create">Add New Employee</a><!--Add a link to the Create view-->
+</p>
+
+<table class="table table-responsive-sm table-striped table-secondary">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeID)<!--Renders the display label that matches the specified expression ie EmployeeID-->
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TitleOfCourtesy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <!--loops through every record contained in the employee model-->
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeID)<!--Renders the display property that matches the specified expression ie EmployeeID-->
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleOfCourtesy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+      
+            <td>
+                <a asp-action="Details" asp-route-id="@item.EmployeeID">Details</a> <!--Add a link to the Details view-->
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>
+
+

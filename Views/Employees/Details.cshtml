@@ -1,0 +1,110 @@
+﻿@model UWofS.CS7.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!--Displays a view with all fields from the employees database.  -->
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.LabelFor(model => model.LastName)<!--Renders the display label that matches the specified expression ie EmployeeID-->
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)<!--Renders the display property that matches the specified expression ie EmployeeID-->
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.TitleOfCourtesy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TitleOfCourtesy)
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.BirthDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.HireDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HireDate)
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.City)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.Region)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Region)
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.PostalCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostalCode)
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.Country)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.HomePhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HomePhone)
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.Extension)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Extension)
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.Notes)
+        </dt>
+        <dd>
+            @Html.TextAreaFor(model => model.Notes, new { @class = "form-control", @rows = 5 })
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.ReportsTo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReportsTo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.EmployeeID">Edit</a> |  <!--Add a link to the Edit view based on the current record employeeID-->
+    <a asp-action="Index">Back to List</a> <!--Add a link to the Details view-->
+</div>
